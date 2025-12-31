@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isca Electrical | Newport's Trusted Electricians | Est. 2019</title>
+    <meta name="description" content="Professional electrical contractors in Newport, South Wales. Full house rewires, new builds, fault finding & garden armoured cable installations. 5+ years serving the community.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --electric-yellow: #FFD000;
+            --electric-amber: #FFAA00;
+            --dark-steel: #0D1117;
+            --steel-grey: #161B22;
+            --light-steel: #21262D;
+            --wire-copper: #B87333;
+            --text-primary: #F0F6FC;
+            --text-secondary: #8B949E;
+            --success-green: #3FB950;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Barlow', sans-serif;
+            background: var(--dark-steel);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Animated Background Grid */
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(90deg, rgba(255, 208, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(rgba(255, 208, 0, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes gridPulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(13, 17, 23, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 208, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--electric-yellow);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon::before {
+            content: '⚡';
+            font-size: 24px;
+            filter: grayscale(1) brightness(0);
+        }
+
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .logo-text h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            color: var(--text-primary);
+            line-height: 1;
+        }
+
+        .logo-text span {
+            font-size: 0.7rem;
+            color: var(--electric-yellow);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .header-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .header-phone:hover {
+            color: var(--electric-yellow);
+        }
+
+        .header-phone svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--electric-yellow);
+            color: var(--dark-steel);
+        }
+
+        .btn-primary:hover {
+            background: var(--electric-amber);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255, 208, 0, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--light-steel);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--electric-yellow);
+            color: var(--electric-yellow);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255, 208, 0, 0.1);
+            border: 1px solid rgba(255, 208, 0, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--electric-yellow);
+            margin-bottom: 24px;
+        }
+
+        .badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--success-green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .hero h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            line-height: 0.95;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+        }
+
+        .hero h2 .highlight {
+            color: var(--electric-yellow);
+            position: relative;
+        }
+
+        .hero h2 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--electric-yellow);
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 32px;
+            padding-top: 32px;
+            border-top: 1px solid var(--light-steel);
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .trust-item .number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--electric-yellow);
+            line-height: 1;
+        }
+
+        .trust-item .label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Hero Visual */
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero-card {
+            background: var(--steel-grey);
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid var(--light-steel);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--electric-yellow), var(--electric-amber));
+        }
+
+        .service-preview {
+            display: grid;
+            gap: 16px;
+        }
+
+        .service-preview-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: var(--dark-steel);
+            border-radius: 12px;
+            border: 1px solid var(--light-steel);
+            transition: all 0.3s;
+        }
+
+        .service-preview-item:hover {
+            border-color: var(--electric-yellow);
+            transform: translateX(8px);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 208, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .service-preview-item h4 {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .service-preview-item p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* Floating Elements */
+        .floating-badge {
+            position: absolute;
+            background: var(--dark-steel);
+            border: 1px solid var(--light-steel);
+            border-radius: 12px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-badge.badge-1 {
+            top: -20px;
+            right: -20px;
+            animation-delay: 0s;
+        }
+
+        .floating-badge.badge-2 {
+            bottom: 60px;
+            left: -40px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating-badge .icon {
+            width: 36px;
+            height: 36px;
+            background: var(--electric-yellow);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .floating-badge .text {
+            font-size: 0.85rem;
+        }
+
+        .floating-badge .text strong {
+            display: block;
+            color: var(--text-primary);
+        }
+
+        .floating-badge .text span {
+            color: var(--text-secondary);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 120px 0;
+            background: var(--steel-grey);
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--electric-yellow), transparent);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            font-size: 0.85rem;
+            color: var(--electric-yellow);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--dark-steel);
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid var(--light-steel);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 208, 0, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--electric-yellow);
+            box-shadow: 0 20px 60px rgba(255, 208, 0, 0.1);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--electric-yellow), var(--electric-amber));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--electric-yellow);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: gap 0.3s;
+        }
+
+        .service-card-link:hover {
+            gap: 12px;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            padding: 120px 0;
+            background: var(--dark-steel);
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .why-us-content {
+            order: 1;
+        }
+
+        .why-us-visual {
+            order: 2;
+        }
+
+        .feature-list {
+            display: grid;
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+            padding: 24px;
+            background: var(--steel-grey);
+            border-radius: 12px;
+            border: 1px solid var(--light-steel);
+            transition: all 0.3s;
+        }
+
+        .feature-item:hover {
+            border-color: var(--electric-yellow);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 208, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--electric-yellow);
+        }
+
+        .feature-text h4 {
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .feature-text p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Stats Card */
+        .stats-card {
+            background: var(--steel-grey);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--light-steel);
+            position: relative;
+        }
+
+        .stats-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: linear-gradient(135deg, var(--electric-yellow), transparent, transparent);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 24px;
+            background: var(--dark-steel);
+            border-radius: 12px;
+        }
+
+        .stat-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            color: var(--electric-yellow);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Areas Covered */
+        .areas {
+            padding: 120px 0;
+            background: var(--steel-grey);
+        }
+
+        .areas-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .areas-intro {
+            position: sticky;
+            top: 120px;
+        }
+
+        .areas-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .area-tag {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 20px;
+            background: var(--dark-steel);
+            border-radius: 10px;
+            border: 1px solid var(--light-steel);
+            transition: all 0.3s;
+        }
+
+        .area-tag:hover {
+            border-color: var(--electric-yellow);
+            transform: translateY(-2px);
+        }
+
+        .area-tag::before {
+            content: '📍';
+            font-size: 1.2rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 120px 0;
+            background: var(--dark-steel);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--steel-grey);
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid var(--light-steel);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 8rem;
+            color: var(--electric-yellow);
+            opacity: 0.1;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            line-height: 1;
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-stars span {
+            color: var(--electric-yellow);
+            font-size: 1.2rem;
+        }
+
+        .testimonial-card p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--electric-yellow), var(--electric-amber));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--dark-steel);
+        }
+
+        .testimonial-info strong {
+            display: block;
+        }
+
+        .testimonial-info span {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--steel-grey), var(--dark-steel));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 208, 0, 0.1), transparent 70%);
+            animation: ctaPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes ctaPulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .cta-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .cta-contact {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 48px;
+            padding-top: 48px;
+            border-top: 1px solid var(--light-steel);
+        }
+
+        .cta-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cta-contact-item svg {
+            width: 24px;
+            height: 24px;
+            color: var(--electric-yellow);
+        }
+
+        .cta-contact-item a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .cta-contact-item a:hover {
+            color: var(--electric-yellow);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0 30px;
+            background: var(--dark-steel);
+            border-top: 1px solid var(--light-steel);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .certifications {
+            display: flex;
+            gap: 16px;
+        }
+
+        .cert-badge {
+            width: 60px;
+            height: 60px;
+            background: var(--steel-grey);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border: 1px solid var(--light-steel);
+        }
+
+        .footer-links h4 {
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--electric-yellow);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--light-steel);
+        }
+
+        .footer-bottom p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .trust-badges {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .floating-badge.badge-2 {
+                left: 0;
+            }
+
+            .why-us-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-us-content {
+                order: 1;
+            }
+
+            .why-us-visual {
+                order: 2;
+            }
+
+            .areas-content {
+                grid-template-columns: 1fr;
+            }
+
+            .areas-intro {
+                position: static;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-contact .header-phone span {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .header-contact .btn {
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding-top: 100px;
+                min-height: auto;
+                padding-bottom: 60px;
+            }
+
+            .trust-badges {
+                flex-wrap: wrap;
+                gap: 24px;
+            }
+
+            .floating-badge {
+                display: none;
+            }
+
+            .services,
+            .why-us,
+            .areas,
+            .testimonials,
+            .cta {
+                padding: 80px 0;
+            }
+
+            .cta-contact {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">
+                    <h1>ISCA ELECTRICAL</h1>
+                    <span>Est. 2019 • Newport</span>
+                </div>
+            </div>
+            <div class="header-contact">
+                <a href="tel:01onal633123456" class="header-phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <span>Call Now</span>
+                </a>
+                <a href="#contact" class="btn btn-primary">Get Free Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="badge">Available for Emergency Callouts</div>
+                    <h2>POWERING <span class="highlight">NEWPORT</span> FOR OVER 5 YEARS</h2>
+                    <p>Professional electrical contractors delivering safe, reliable solutions for homes and businesses across South Wales. From complete rewires to emergency repairs – we've got you covered.</p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/>
+                            </svg>
+                            Get Free Quote
+                        </a>
+                        <a href="#services" class="btn btn-outline">View Services</a>
+                    </div>
+                    <div class="trust-badges">
+                        <div class="trust-item">
+                            <span class="number">5+</span>
+                            <span class="label">Years Experience</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="number">500+</span>
+                            <span class="label">Jobs Completed</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="number">100%</span>
+                            <span class="label">Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <div class="service-preview">
+                            <div class="service-preview-item">
+                                <div class="service-icon">🏠</div>
+                                <div>
+                                    <h4>Full House Rewires</h4>
+                                    <p>Complete electrical upgrades</p>
+                                </div>
+                            </div>
+                            <div class="service-preview-item">
+                                <div class="service-icon">🔧</div>
+                                <div>
+                                    <h4>Fault Finding</h4>
+                                    <p>Expert troubleshooting</p>
+                                </div>
+                            </div>
+                            <div class="service-preview-item">
+                                <div class="service-icon">🏗️</div>
+                                <div>
+                                    <h4>New Build Installations</h4>
+                                    <p>First & second fix</p>
+                                </div>
+                            </div>
+                            <div class="service-preview-item">
+                                <div class="service-icon">🌳</div>
+                                <div>
+                                    <h4>Garden Power</h4>
+                                    <p>Armoured cable installs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-badge badge-1">
+                        <div class="icon">✓</div>
+                        <div class="text">
+                            <strong>Fully Insured</strong>
+                            <span>Public Liability</span>
+                        </div>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <div class="icon">⚡</div>
+                        <div class="text">
+                            <strong>Part P Registered</strong>
+                            <span>Building Regs Compliant</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-tag">What We Do</p>
+                <h2 class="section-title">COMPREHENSIVE ELECTRICAL SERVICES</h2>
+                <p class="section-subtitle">From minor repairs to major installations, our qualified electricians handle every job with precision and care.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-card-icon">🏠</div>
+                    <h3>Full House Rewires</h3>
+                    <p>Complete electrical system upgrades for older properties. We replace outdated wiring, install modern consumer units, and ensure your home meets current safety standards.</p>
+                    <a href="#contact" class="service-card-link">
+                        Get Quote
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">🔍</div>
+                    <h3>Fault Finding</h3>
+                    <p>Expert diagnostic services to identify and resolve electrical issues quickly. Tripping circuits, flickering lights, power outages – we'll find the problem and fix it.</p>
+                    <a href="#contact" class="service-card-link">
+                        Get Quote
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">🏗️</div>
+                    <h3>New Build Installations</h3>
+                    <p>Complete electrical installations for new construction projects. First fix, second fix, and final testing – we work with builders and homeowners alike.</p>
+                    <a href="#contact" class="service-card-link">
+                        Get Quote
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">🌳</div>
+                    <h3>Garden & Outdoor</h3>
+                    <p>Professional armoured cable installations for garden offices, workshops, hot tubs, and outdoor lighting. Safe, weatherproof power where you need it.</p>
+                    <a href="#contact" class="service-card-link">
+                        Get Quote
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">📋</div>
+                    <h3>Testing & Certification</h3>
+                    <p>EICR testing, landlord certificates, and electrical safety reports. Essential documentation for homeowners, landlords, and property transactions.</p>
+                    <a href="#contact" class="service-card-link">
+                        Get Quote
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">💡</div>
+                    <h3>Lighting Design</h3>
+                    <p>Transform your space with modern lighting solutions. LED upgrades, smart lighting, feature installations, and energy-efficient designs throughout.</p>
+                    <a href="#contact" class="service-card-link">
+                        Get Quote
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="container">
+            <div class="why-us-grid">
+                <div class="why-us-content">
+                    <p class="section-tag">Why Isca Electrical</p>
+                    <h2 class="section-title">TRUSTED LOCAL ELECTRICIANS</h2>
+                    <p class="section-subtitle">We're not just contractors – we're your neighbours. Local expertise, personal service, and a genuine commitment to quality work.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    <path d="M9 12l2 2 4-4"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Fully Qualified & Insured</h4>
+                                <p>Part P registered, fully insured with public liability cover for your complete peace of mind.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Reliable & Punctual</h4>
+                                <p>We show up when we say we will. Clear communication throughout every project.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Clean & Tidy Work</h4>
+                                <p>We treat your home with respect. Dust sheets down, mess cleaned up, every time.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Transparent Pricing</h4>
+                                <p>Honest quotes with no hidden costs. You'll know exactly what you're paying before we start.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-us-visual">
+                    <div class="stats-card">
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">5+</div>
+                                <div class="stat-label">Years Established</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Happy Customers</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">24hr</div>
+                                <div class="stat-label">Response Time</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Satisfaction Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas Covered -->
+    <section class="areas" id="areas">
+        <div class="container">
+            <div class="areas-content">
+                <div class="areas-intro">
+                    <p class="section-tag">Service Areas</p>
+                    <h2 class="section-title">COVERING NEWPORT & BEYOND</h2>
+                    <p class="section-subtitle">Based in Newport, we serve customers across South Wales. If you're unsure whether we cover your area, just ask – we're happy to travel for the right job.</p>
+                </div>
+                <div class="areas-list">
+                    <div class="area-tag">Newport</div>
+                    <div class="area-tag">Cwmbran</div>
+                    <div class="area-tag">Pontypool</div>
+                    <div class="area-tag">Caerphilly</div>
+                    <div class="area-tag">Cardiff</div>
+                    <div class="area-tag">Risca</div>
+                    <div class="area-tag">Blackwood</div>
+                    <div class="area-tag">Usk</div>
+                    <div class="area-tag">Abergavenny</div>
+                    <div class="area-tag">Chepstow</div>
+                    <div class="area-tag">Caldicot</div>
+                    <div class="area-tag">Magor</div>
+                    <div class="area-tag">Rogerstone</div>
+                    <div class="area-tag">Bassaleg</div>
+                    <div class="area-tag">Caerleon</div>
+                    <div class="area-tag">Tredegar</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-tag">Customer Reviews</p>
+                <h2 class="section-title">WHAT OUR CUSTOMERS SAY</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p>"Fantastic service from start to finish. Had our entire house rewired and couldn't be happier with the result. Professional, tidy, and great value. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JD</div>
+                        <div class="testimonial-info">
+                            <strong>James Davies</strong>
+                            <span>Full House Rewire, Newport</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p>"Called them for an emergency when our power went out on a Sunday evening. They came out within the hour and had everything sorted. Can't thank them enough!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SE</div>
+                        <div class="testimonial-info">
+                            <strong>Sarah Evans</strong>
+                            <span>Emergency Callout, Cwmbran</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p>"Had armoured cable run to my garden office and a new consumer unit installed. The work was completed to an excellent standard. Will definitely use again."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MT</div>
+                        <div class="testimonial-info">
+                            <strong>Mark Thomas</strong>
+                            <span>Garden Office Install, Caerleon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">READY TO GET STARTED?</h2>
+                <p class="cta-subtitle">Whether it's a simple repair or a complete rewire, we're here to help. Get in touch for a free, no-obligation quote.</p>
+                <div class="cta-buttons">
+                    <a href="tel:01633123456" class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/>
+                        </svg>
+                        Call: 01633 123 456
+                    </a>
+                    <a href="mailto:info@iscaelectrical.co.uk" class="btn btn-outline">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        Email Us
+                    </a>
+                </div>
+                <div class="cta-contact">
+                    <div class="cta-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <a href="#">Newport, South Wales</a>
+                    </div>
+                    <div class="cta-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        <span>Mon - Fri: 7am - 6pm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon"></div>
+                        <div class="logo-text">
+                            <h1>ISCA ELECTRICAL</h1>
+                            <span>Est. 2019 • Newport</span>
+                        </div>
+                    </div>
+                    <p>Professional electrical contractors serving Newport and South Wales. Over 5 years of trusted service to homes and businesses.</p>
+                    <div class="certifications">
+                        <div class="cert-badge" title="Part P Registered">⚡</div>
+                        <div class="cert-badge" title="Fully Insured">🛡️</div>
+                        <div class="cert-badge" title="NICEIC Approved">✓</div>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">House Rewires</a></li>
+                        <li><a href="#services">Fault Finding</a></li>
+                        <li><a href="#services">New Builds</a></li>
+                        <li><a href="#services">Garden Power</a></li>
+                        <li><a href="#services">Testing & Certs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Areas</h4>
+                    <ul>
+                        <li><a href="#areas">Newport</a></li>
+                        <li><a href="#areas">Cwmbran</a></li>
+                        <li><a href="#areas">Cardiff</a></li>
+                        <li><a href="#areas">Caerphilly</a></li>
+                        <li><a href="#areas">Chepstow</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:01633123456">01633 123 456</a></li>
+                        <li><a href="mailto:info@iscaelectrical.co.uk">info@iscaelectrical.co.uk</a></li>
+                        <li><a href="#contact">Get a Quote</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Isca Electrical. All rights reserved.</p>
+                <p>Serving Newport & South Wales since 2019</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(13, 17, 23, 0.98)';
+            } else {
+                header.style.background = 'rgba(13, 17, 23, 0.95)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .feature-item, .testimonial-card, .area-tag').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
