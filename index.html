@@ -27,7 +27,7 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
         /* Trust Bar */
-        .trust-bar { background: var(--steel-grey); border-bottom: 1px solid var(--light-steel); padding: 8px 0; position: fixed; top: 0; left: 0; right: 0; z-index: 1001; }
+        .trust-bar { background: var(--steel-grey); border-bottom: 1px solid var(--light-steel); padding: 10px 0; position: fixed; top: 0; left: 0; right: 0; z-index: 1001; }
         .trust-bar-content { display: flex; justify-content: center; align-items: center; gap: 32px; font-size: 0.85rem; }
         .trust-bar-item { display: flex; align-items: center; gap: 8px; color: var(--text-secondary); }
         .trust-bar-item svg { width: 16px; height: 16px; color: var(--accent-green); }
@@ -35,10 +35,10 @@
         .trust-bar-item.napit svg { color: var(--napit-red); }
 
         /* Header */
-        header { position: fixed; top: 36px; left: 0; right: 0; z-index: 1000; background: rgba(13, 17, 23, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(127, 255, 0, 0.1); }
+        header { position: fixed; top: 41px; left: 0; right: 0; z-index: 1000; background: rgba(13, 17, 23, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(127, 255, 0, 0.1); }
         .header-content { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; max-width: 1200px; margin: 0 auto; }
-        .logo-link { display: flex; align-items: center; }
-        .logo-img { height: 52px; width: auto; object-fit: contain; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+        .logo-link { display: flex; align-items: center; flex-shrink: 0; }
+        .logo-img { height: 56px; width: auto; object-fit: contain; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
         .header-contact { display: flex; align-items: center; gap: 24px; }
         .header-phone { display: flex; align-items: center; gap: 8px; color: var(--text-secondary); text-decoration: none; transition: color 0.3s; }
         .header-phone:hover { color: var(--accent-green); }
@@ -51,7 +51,7 @@
         .btn-outline:hover { border-color: var(--accent-green); color: var(--accent-green); }
 
         /* Hero */
-        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 140px; overflow: hidden; }
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 150px; overflow: hidden; }
         .hero-bg { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(127, 255, 0, 0.03) 1px, transparent 1px), linear-gradient(rgba(127, 255, 0, 0.03) 1px, transparent 1px); background-size: 60px 60px; animation: gridPulse 4s ease-in-out infinite; }
         @keyframes gridPulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
         .hero-content { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
@@ -93,8 +93,9 @@
         .accreditations { padding: 60px 0; background: var(--steel-grey); border-top: 1px solid var(--light-steel); border-bottom: 1px solid var(--light-steel); }
         .accreditations-content { display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap; }
         .accreditation-item { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
-        .napit-badge-large { display: flex; align-items: center; gap: 12px; padding: 16px 24px; background: white; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 0 3px rgba(26, 77, 140, 0.3); transform: translateY(0); transition: all 0.3s ease; }
+        .napit-badge-large { display: flex; align-items: center; justify-content: center; padding: 12px; background: white; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 0 3px rgba(26, 77, 140, 0.3); transform: translateY(0); transition: all 0.3s ease; }
         .napit-badge-large:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 4px rgba(26, 77, 140, 0.4); }
+        .napit-logo-img { height: 90px; width: auto; object-fit: contain; }
         .napit-checkmark { position: relative; width: 50px; height: 50px; }
         .napit-checkmark::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 15px; background: repeating-linear-gradient(0deg, var(--napit-blue), var(--napit-blue) 3px, white 3px, white 6px); }
         .napit-checkmark::after { content: '✓'; position: absolute; bottom: 0; right: 0; font-size: 32px; font-weight: bold; color: var(--napit-red); line-height: 1; }
@@ -105,6 +106,20 @@
         .accreditation-divider { width: 1px; height: 60px; background: var(--light-steel); }
         .trust-icon-badge { width: 70px; height: 70px; background: var(--dark-steel); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--light-steel); }
         .trust-icon-badge svg { width: 32px; height: 32px; color: var(--accent-green); }
+        
+        /* Custom NAPIT Badge */
+        .napit-custom { position: relative; overflow: hidden; flex-direction: column; gap: 2px; }
+        .napit-bars { display: flex; flex-direction: column; gap: 3px; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); }
+        .napit-bars span { height: 3px; background: var(--accent-green); border-radius: 1px; }
+        .napit-bars span:nth-child(1) { width: 36px; opacity: 1; }
+        .napit-bars span:nth-child(2) { width: 32px; opacity: 0.85; margin-left: 2px; }
+        .napit-bars span:nth-child(3) { width: 28px; opacity: 0.7; margin-left: 4px; }
+        .napit-bars span:nth-child(4) { width: 24px; opacity: 0.55; margin-left: 6px; }
+        .napit-bars span:nth-child(5) { width: 20px; opacity: 0.4; margin-left: 8px; }
+        .napit-bars span:nth-child(6) { width: 16px; opacity: 0.25; margin-left: 10px; }
+        .napit-custom .napit-tick { position: absolute; bottom: 6px; right: 6px; width: 28px; height: 28px; color: var(--accent-green); }
+        
+        .accreditation-sublabel { font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; margin-top: -8px; }
 
         /* Sections */
         .services { padding: 120px 0; background: var(--dark-steel); }
@@ -178,16 +193,11 @@
         .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
         .footer-brand p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 24px; }
         .footer-logo { height: 80px; width: auto; margin-bottom: 20px; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
-        .footer-accreditations { display: flex; flex-direction: column; gap: 16px; margin-top: 20px; }
+        .footer-accreditations { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
         .footer-accreditations-label { font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 2px; }
-        .footer-napit { display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px; background: white; border-radius: 10px; max-width: fit-content; box-shadow: 0 6px 24px rgba(0,0,0,0.3), 0 0 0 2px rgba(26, 77, 140, 0.2); transition: all 0.3s ease; }
-        .footer-napit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.35), 0 0 0 3px rgba(26, 77, 140, 0.3); }
-        .footer-napit-icon { width: 40px; height: 40px; position: relative; }
-        .footer-napit-icon::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 12px; background: repeating-linear-gradient(0deg, var(--napit-blue), var(--napit-blue) 2px, white 2px, white 4px); }
-        .footer-napit-icon::after { content: '✓'; position: absolute; bottom: 0; right: 0; font-size: 24px; font-weight: bold; color: var(--napit-red); line-height: 1; }
-        .footer-napit-text { font-size: 0.85rem; line-height: 1.2; }
-        .footer-napit-text strong { display: block; color: var(--napit-blue); font-weight: 700; }
-        .footer-napit-text span { font-size: 0.7rem; color: white; background: var(--napit-red); padding: 1px 4px; }
+        .footer-napit { display: inline-flex; align-items: center; justify-content: center; padding: 10px; background: white; border-radius: 12px; max-width: fit-content; box-shadow: 0 6px 24px rgba(0,0,0,0.3); transition: all 0.3s ease; }
+        .footer-napit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.35); }
+        .napit-logo-footer { height: 70px; width: auto; object-fit: contain; }
         .footer-links h4 { font-weight: 700; margin-bottom: 20px; color: var(--text-primary); }
         .footer-links ul { list-style: none; }
         .footer-links li { margin-bottom: 12px; }
@@ -214,12 +224,12 @@
             .trust-bar-content { gap: 16px; font-size: 0.75rem; }
             .trust-bar-item span { display: none; }
             .trust-bar-item.napit span { display: inline; }
-            header { top: 32px; }
+            header { top: 36px; }
             .header-content { padding: 10px 16px; }
-            .logo-img { height: 44px; border-radius: 10px; }
+            .logo-img { height: 48px; }
             .header-contact .header-phone { display: none; }
             .header-contact .btn { padding: 10px 16px; font-size: 0.85rem; }
-            .hero { padding-top: 140px; min-height: auto; padding-bottom: 60px; }
+            .hero { padding-top: 150px; min-height: auto; padding-bottom: 60px; }
             .trust-badges { flex-wrap: wrap; gap: 24px; }
             .floating-badge { display: none; }
             .accreditations-content { gap: 30px; }
@@ -276,7 +286,7 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                     <span>Call Now</span>
                 </a>
-                <a href="#contact" class="btn btn-primary">Get Free Quote</a>
+                <a href="https://wa.me/447538858153?text=Hi%20Isca%20Energy%2C%20I%27d%20like%20to%20get%20a%20free%20quote%20please." class="btn btn-primary btn-quote">Get Free Quote</a>
             </div>
         </div>
     </header>
@@ -291,7 +301,7 @@
                     <h2>POWERING <span class="highlight">NEWPORT</span> FOR OVER 5 YEARS</h2>
                     <p>Professional electrical contractors delivering safe, reliable solutions for homes and businesses across South Wales. From complete rewires to emergency repairs – we've got you covered.</p>
                     <div class="hero-cta">
-                        <a href="#contact" class="btn btn-primary">
+                        <a href="https://wa.me/447538858153?text=Hi%20Isca%20Energy%2C%20I%27d%20like%20to%20get%20a%20free%20quote%20please." class="btn btn-primary">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg>
                             Get Free Quote
                         </a>
@@ -351,14 +361,14 @@
         <div class="container">
             <div class="accreditations-content">
                 <div class="accreditation-item">
-                    <div class="napit-badge-large">
-                        <div class="napit-checkmark"></div>
-                        <div class="napit-text">
-                            <span class="napit-title">NAPIT</span>
-                            <span class="napit-subtitle">Approved Electrician</span>
+                    <div class="trust-icon-badge napit-custom">
+                        <div class="napit-bars">
+                            <span></span><span></span><span></span><span></span><span></span><span></span>
                         </div>
+                        <svg class="napit-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
-                    <span class="accreditation-label">Government Approved Scheme</span>
+                    <span class="accreditation-label">NAPIT</span>
+                    <span class="accreditation-sublabel">Government Approved</span>
                 </div>
                 <div class="accreditation-divider"></div>
                 <div class="accreditation-item">
@@ -398,37 +408,37 @@
                     <div class="service-card-icon">🏠</div>
                     <h3>Full House Rewires</h3>
                     <p>Complete electrical system upgrades for older properties. We replace outdated wiring, install modern consumer units, and ensure your home meets current safety standards.</p>
-                    <a href="#contact" class="service-card-link">Get Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="https://wa.me/447538858153?text=Hi%20Isca%20Energy%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20this%20service%20please." class="service-card-link">Get Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
                 <div class="service-card">
                     <div class="service-card-icon">🔍</div>
                     <h3>Fault Finding</h3>
                     <p>Expert diagnostic services to identify and resolve electrical issues quickly. Tripping circuits, flickering lights, power outages – we'll find the problem and fix it.</p>
-                    <a href="#contact" class="service-card-link">Get Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="https://wa.me/447538858153?text=Hi%20Isca%20Energy%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20this%20service%20please." class="service-card-link">Get Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
                 <div class="service-card">
                     <div class="service-card-icon">🏗️</div>
                     <h3>New Build Installations</h3>
                     <p>Complete electrical installations for new construction projects. First fix, second fix, and final testing – we work with builders and homeowners alike.</p>
-                    <a href="#contact" class="service-card-link">Get Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="https://wa.me/447538858153?text=Hi%20Isca%20Energy%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20this%20service%20please." class="service-card-link">Get Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
                 <div class="service-card">
                     <div class="service-card-icon">🌳</div>
                     <h3>Garden & Outdoor</h3>
                     <p>Professional armoured cable installations for garden offices, workshops, hot tubs, and outdoor lighting. Safe, weatherproof power where you need it.</p>
-                    <a href="#contact" class="service-card-link">Get Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="https://wa.me/447538858153?text=Hi%20Isca%20Energy%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20this%20service%20please." class="service-card-link">Get Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
                 <div class="service-card">
                     <div class="service-card-icon">📋</div>
                     <h3>Testing & Certification</h3>
                     <p>EICR testing, landlord certificates, and electrical safety reports. Essential documentation for homeowners, landlords, and property transactions.</p>
-                    <a href="#contact" class="service-card-link">Get Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="https://wa.me/447538858153?text=Hi%20Isca%20Energy%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20this%20service%20please." class="service-card-link">Get Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
                 <div class="service-card">
                     <div class="service-card-icon">💡</div>
                     <h3>Lighting Design</h3>
                     <p>Transform your space with modern lighting solutions. LED upgrades, smart lighting, feature installations, and energy-efficient designs throughout.</p>
-                    <a href="#contact" class="service-card-link">Get Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="https://wa.me/447538858153?text=Hi%20Isca%20Energy%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20this%20service%20please." class="service-card-link">Get Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
             </div>
         </div>
@@ -582,8 +592,7 @@
                     <div class="footer-accreditations">
                         <span class="footer-accreditations-label">Accredited By</span>
                         <div class="footer-napit">
-                            <div class="footer-napit-icon"></div>
-                            <div class="footer-napit-text"><strong>NAPIT</strong><span>Approved Electrician</span></div>
+                            <img src="https://www.napit.org.uk/Assets/WebpImages/Product/Default/large/NAPIT-Member-Logo%20-Electrical-1080x1080.webp" alt="NAPIT Approved Electrician" class="napit-logo-footer">
                         </div>
                     </div>
                 </div>
@@ -612,7 +621,7 @@
                     <ul>
                         <li><a href="tel:01633123456">01633 123 456</a></li>
                         <li><a href="mailto:info@iscaenergy.co.uk">info@iscaenergy.co.uk</a></li>
-                        <li><a href="#contact">Get a Quote</a></li>
+                        <li><a href="https://wa.me/447538858153?text=Hi%20Isca%20Energy%2C%20I%27d%20like%20to%20get%20a%20quote%20please.">Get a Quote</a></li>
                     </ul>
                 </div>
             </div>
@@ -641,7 +650,7 @@
                 header.style.top = '0';
             } else {
                 trustBar.style.transform = 'translateY(0)';
-                header.style.top = '36px';
+                header.style.top = '41px';
             }
         });
         const observer = new IntersectionObserver((entries) => {
